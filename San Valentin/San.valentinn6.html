@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi San Valentín 💘</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffc5d3;
+      font-family: "Arial", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .screen {
+      display: none;
+      padding: 20px;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .active {
+      display: block;
+    }
+
+    /* ✨ TEXTO NEÓN ✨ */
+    .neon {
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow:
+        0 0 5px #ff6f91,
+        0 0 10px #ff6f91,
+        0 0 20px #ff6f91,
+        0 0 40px #ff6f91;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .yes {
+      background-color: #ff6f91;
+      color: white;
+    }
+
+    .no {
+      background-color: #ffffff;
+      color: #ff6f91;
+    }
+
+    /* 📸 ESTILO DE FOTOS */
+    .photo {
+  width: 100%;
+  max-width: 220px;   /* 👈 aquí se hace más pequeña */
+  height: auto;
+  border-radius: 25px;
+  margin: 20px auto;
+  display: block;
+   }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🌸 Pantalla 1 -->
+  <div class="screen active" id="screen1">
+
+    <!-- FOTO INICIAL -->
+    <img src="foto1.jpg" class="photo" alt="Nosotros">
+
+    <h1 class="neon">¿Quieres ser mi San Valentín? 🫶🏼 </h1>
+
+    <button class="yes" onclick="showScreen('screen3')">Siii !!</button>
+    <button class="no" onclick="showScreen('screen2')">No</button>
+  </div>
+
+  <!-- 💬 Pantalla 2 -->
+  <div class="screen" id="screen2">
+    <h1>Uhhh, dijiste no?</h1>
+    <!-- FOTO triste -->
+    <img src="foto2.jpg" class="photo" alt="triste">
+    <p>
+      Esa no es la respuesta correcta, mi amor.
+      <br><br>
+      ¡Inténtalo otra vez!!!
+    </p>
+    <button class="yes" onclick="showScreen('screen1')">Intentarlo otra vez!</button>
+  </div>
+
+  <!-- 💘 Pantalla final -->
+  <div class="screen" id="screen3">
+    <p>
+      Sabía que no podrías resistirte a mi encanto, preciosa.
+    <!-- FOTOS FINALES -->
+       <img src="foto3.jpg" class="photo" alt="Feliz 1">
+      </p>
+      Y ya que aceptaste,
+      <br>
+      tenemos una cita el <strong>14 de febrero</strong>.
+      <br><br>
+      No llegues tardeeeeeeeeeee, ¿sí?
+      <br>
+      Te esperaré 💕
+    </p>
+
+    <!-- FOTOS FINALES -->
+       <img src="foto4.jpg" class="photo" alt="Feliz 2">
+  </div>
+
+  <script>
+    function showScreen(id) {
+      const screens = document.querySelectorAll(".screen");
+      screens.forEach(screen => screen.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
